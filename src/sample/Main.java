@@ -22,10 +22,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    public void start(Stage primaryStage) throws Exception{
-
-
-
+    public void start(Stage primaryStage) throws Exception {
 
 
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -66,8 +63,6 @@ public class Main extends Application {
         grid.add(hbBtn, 1, 4);
 
 
-
-
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
 
@@ -79,7 +74,6 @@ public class Main extends Application {
         });
 
     }
-
 
 
     public static void main(String[] args) {
