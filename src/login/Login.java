@@ -1,4 +1,4 @@
-package sample;
+package login;
 
 // JavaFX basics
 
@@ -20,7 +20,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Login extends Application {
 
     public void start(Stage primaryStage) throws Exception {
 
@@ -36,12 +36,15 @@ public class Main extends Application {
         Scene scene = new Scene(grid, 300, 275);
         primaryStage.setScene(scene);
 
+        scene.getStylesheets().add
+          (Login.class.getResource("Login.css").toExternalForm());
+
         primaryStage.setTitle("JavaFX Welcome");
         primaryStage.show();    // display stage
 
         // JavaFX objects, define and display at locations on the GridPane object
         Text scenetitle = new Text("Welcome");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+
         grid.add(scenetitle, 0, 0, 2, 1);
 
         Label userName = new Label("User Name:");
@@ -62,14 +65,15 @@ public class Main extends Application {
         hbBtn.getChildren().add(btn);
         grid.add(hbBtn, 1, 4);
 
-
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
+
+        scenetitle.setId("welcome-text");
+        actiontarget.setId("actiontarget");
 
 
         // Button event handler
         btn.setOnAction(e -> {
-            actiontarget.setFill(Color.FIREBRICK);
             actiontarget.setText("Sign in button pressed");
         });
 
